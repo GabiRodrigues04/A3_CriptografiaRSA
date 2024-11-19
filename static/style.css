@@ -1,9 +1,9 @@
 body {
     color: #2c2f33;
-    background-color: #f5f5f5;
+    background-color: #ececec;
 }
 .custom-container {
-    background-color: #ffffff; 
+    background-color: rgb(253, 253, 253); 
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -11,7 +11,7 @@ body {
     margin-top: 8rem;
 }
 .card {
-    background-color: #f7f7f7;
+    background-color: #f1f1f1;
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -30,4 +30,22 @@ body {
 .btn-primary:hover {
     background-color: #45a049;
     border-color: #45a049;
+}
+
+.card-img-top {
+    height: 170px;
+    object-fit: cover; 
+}
+.pageBtns {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 18px;
+    font-weight: 600;
+}
+input[type="radio"] {
+    transform: scale(1.5); 
+    margin: 5px;
 }
