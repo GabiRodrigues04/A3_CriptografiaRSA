@@ -4,23 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votação</title>
+    <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-    <h1>Escolha seu Candidato</h1>
 
-    <div class="candidato" id="valter">
-        <img src="https://via.placeholder.com/100x100.png?text=Valter" alt="Valter Miguel">
-        <p>Valter Miguel</p>
-    </div>
+<div class="container custom-container">
 
-    <div class="candidato" id="carlos">
-        <img src="https://via.placeholder.com/100x100.png?text=Carlos" alt="Carlos Roberto">
-        <p>Carlos Roberto</p>
-    </div>
+    <h1 class="text-center mb-4">Escolha seu Candidato</h1>
 
-    <button id="votarBtn">Votar</button>
+    <form class="votacao" action="/templates/" method="post">
+        <div class="candidatos d-flex justify-content-around flex-wrap">
+            <div class="card m-2" style="width: 10rem;">
+                <img src="https://via.placeholder.com/100x100.png?text=Valter" class="card-img-top" alt="Valter Miguel">
+                <div class="card-body">
+                    <h5 class="card-title">Valter Miguel</h5>
+                    <input type="radio" name="candidato" value="Valter Miguel">
+                </div>
+            </div>
 
-    <div id="alertBox" class="alert" style="display: none;"></div>
+            <div class="card m-2" style="width: 10rem;">
+                <img src="https://via.placeholder.com/100x100.png?text=Carlos" class="card-img-top" alt="Carlos Roberto">
+                <div class="card-body">
+                    <h5 class="card-title">Carlos Roberto</h5>
+                    <input type="radio" name="candidato" value="Carlos Roberto">
+                </div>
+            </div>
+
+            <div class="card m-2" style="width: 10rem;">
+                <img src="https://via.placeholder.com/100x100.png?text=Maria" class="card-img-top" alt="Maria Francisca">
+                <div class="card-body">
+                    <h5 class="card-title">Maria Francisca</h5>
+                    <input type="radio" name="candidato" value="Maria Francisca">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <div class="me-2">
+                <input type="text" name="username" class="form-control" placeholder="Digite seu nome" style="width: 300px;">
+            </div>
+            <div>
+                <button id="votarBtn" class="btn btn-primary">Votar</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div id="alertBox" class="alert mt-3" style="display: none;"></div>
 </div>
+
+<script src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
