@@ -9,13 +9,25 @@
 </head>
 <body>
 
-    <div class = "container ">
-    <div class = "row mt-5 text-center align-items-center">
-    <div class = "col">
-        <h1> Tabela de votos </h1>
-    </div>
-    <div class = "col">
-    </div>
+    <div class="container">
+        <div class="row mt-5 align-items-center">
+            <div class="col text-start ms-5">
+                <h1 class="mb-0 ms-5 ">Tabela de votos</h1>
+            </div>
+            <div class="col text-end me-5">
+                
+                <div class="col text-end me-5">
+                    <a href="{{ url_for('VotesList', decrypted='true' if not show_decrypted else 'false') }}" class="btn btn-primary btn-lg me-4">
+                        {% if show_decrypted %}
+                            Criptografar
+                        {% else %}
+                            Descriptografar
+                        {% endif %}
+                    </a>
+                </div>
+
+            </div>
+        </div>
 
         <div class="row">
             <div class="col mt-5">
@@ -27,19 +39,23 @@
                         <th> Data </th>
                         <th> Usuário </th>
                         <th> Voto </th>
-                        <th> Criptografar/Descriptografar </th>
                     </tr>
 
                     {% for row in votes%}
 
                     <tr class="align-middle"> 
-                        <td > {{row.0}} </td>
-                        <td> {{row.2}} </td>
-                        <td> {{row.3}} </td>
-                        <td> {{row.1}} </td>
-                        <td> <a href="#" class="btn btn-primary">Criptografar</a></td>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>
+                            {% if show_decrypted %}
+                                {{ row[1] }}
+                            {% else %}
+                                {{ row[1] }} 
+                            {% endif %}
+                        </td>
                     </tr>
-
+                    
                     {% endfor %}
 
                 </table>
